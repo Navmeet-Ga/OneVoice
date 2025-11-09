@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <header>
+  <div class="nav">
+    <div class="btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Home"/>
+      <span>Home</span>
+    </div>
+    <div class="btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/9068/9068973.png" alt="Archive"/>
+      <span>Archive</span>
+    </div>
+    <div class="btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Profile"/>
+      <span>Profile</span>
+    </div>
+    <div class="btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/3524/3524636.png" alt="Settings"/>
+      <span>Settings</span>
+    </div>
+  </div>
+  <br>
+  <br>
+      <a href="" class="Heading"><b>𝐎𝐧𝐞𝐕𝐨𝐢𝐜𝐞</b></a>
+      <!-- Button which links to a login page path (method 1: anchor-styled button) -->
+      <a class="login-btn" href="login.html">Login</a>
+      <!-- Or: use a button element that navigates with JavaScript on click (method 2) -->
+      <!-- <button class="btn btn-primary" id="goto-login">Login</button> -->
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Delicious design, delightful interactions</h1>
+          <p class="lead">A clean interface with hover cards and a modal login/signup — built with external CSS.</p>
+          <!-- CTA button that opens the login modal (same-page popup) -->
+          <button class="btn btn-cta" id="open-login-modal">Get Started</button>
+        </div>
+        <div class="hero-visual">
+          <!-- simple illustration box -->
+          <div class="card-visual">
+            <h3>Today’s Special</h3>
+            <p>Try a bento-inspired UI!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container features">
+      <h2>Features</h2>
+      <ul class="feature-list">
+        <li>Responsive grid layout</li>
+        <li>Hover transform and glow effects</li>
+        <li>Modal login & signup on same page</li>
+        <li>External CSS for easy customization</li>
+      </ul>
+    </section>
+
+    <section id="cards" class="container cards-section">
+      <h2>Explore</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="https://placehold.co/600x400?text=Image+1" alt="Example 1" />
+          <h3>Card Title 1</h3>
+          <p>Short description for card one. Hover to see effects.</p>
+          <a class="card-link" href="details1.html">View</a>
+        </article>
+
+        <article class="card">
+          <img src="https://placehold.co/600x400?text=Image+2" alt="Example 2" />
+          <h3>Card Title 2</h3>
+          <p>Short description for card two. Smooth scale and shadow on hover.</p>
+          <a class="card-link" href="details2.html">View</a>
+        </article>
+
+        <article class="card">
+          <img src="https://placehold.co/600x400?text=Image+3" alt="Example 3" />
+          <h3>Card Title 3</h3>
+          <p>Short description for card three. Subtle lift and glow effect.</p>
+          <a class="card-link" href="details3.html">View</a>
+        </article>
+
+        <article class="card">
+          <img src="https://placehold.co/600x400?text=Image+4" alt="Example 4" />
+          <h3>Card Title 4</h3>
+          <p>Another card. Works well on desktop and mobile.</p>
+          <a class="card-link" href="details4.html">View</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Questions? <a href="mailto:hello@magicbento.example">hello@magicbento.example</a></p>
+    </section>
+  </main>
+
+  <!-- Modal for Login / Signup -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div class="modal-tabs">
+        <button class="tab active" data-tab="login" id="tab-login">Login</button>
+        <button class="tab" data-tab="signup" id="tab-signup">Signup</button>
+      </div>
+
+      <div class="modal-body">
+        <form class="form form-login" id="form-login">
+          <h3 id="modal-title">Login</h3>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required placeholder="••••••••" />
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="button" class="btn btn-ghost" id="forgot">Forgot?</button>
+          </div>
+        </form>
+
+        <form class="form form-signup" id="form-signup" hidden>
+          <h3>Sign up</h3>
+          <label>
+            Name
+            <input type="text" name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required placeholder="Create a password" />
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Magic Bento — Built with HTML & CSS</div>
+  </footer>
+  <script>
+    // Circular spark effect with random color each click
+    document.addEventListener('click', e => {
+      const sparkCount = 15; // number of sparks in a circle
+      const radius = 30; // radius of the circle
+
+      // Generate a random color (HSL gives smooth hue variations)
+      const randomHue = Math.floor(Math.random() * 360);
+      const color = `hsl(${randomHue}, 100%, 60%)`;
+
+      for (let i = 0; i < sparkCount; i++) {
+        const angle = (i / sparkCount) * 2 * Math.PI;
+        const x = Math.cos(angle) * radius + 'px';
+        const y = Math.sin(angle) * radius + 'px';
+
+        const spark = document.createElement('div');
+        spark.classList.add('spark');
+        spark.style.left = `${e.clientX}px`;
+        spark.style.top = `${e.clientY}px`;
+        spark.style.setProperty('--x', x);
+        spark.style.setProperty('--y', y);
+        spark.style.setProperty('--spark-color', color);
+
+        document.body.appendChild(spark);
+        spark.addEventListener('animationend', () => spark.remove());
+      }
+    });
+  </script>
+</body>
+</html>
