@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneVoice</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <style>
+        /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+  .Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(11,10,16,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(125, 121, 121, 0.692);
+  }
+.nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center
+    }
+  #cors:hover, #featrs:hover, #qres:hover, #setngs:hover{
+    transform: translateY(-8px) rotate(5deg) rotate(-2deg) scale(1.02);
+    transition: all 0.5s ease;
+    fill-opacity: 0.8;
+  } 
+  .nav-links a{
+    color: wheat;
+    text-decoration:none;
+    font-weight:600
+    
+  }
+  .Heading {
+      text-align: left;
+      color: rgba(172, 5, 249, 0.759);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-decoration: none;
+      transition: text-shadow 0.3s ease;
+      padding-right: 85vh;
+
+  }
+
+  .Heading:hover{
+      text-shadow: #8c75d689 0 5px, #7b00ff97 0 10px;
+  }
+
+/* Login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+/* Form styling */
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-form p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+}
+
+.forgot-password, .signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-password a, .signup-link a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.forgot-password a:hover, .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+/* spark h yee  */
+    .hidden{ display:none !important }
+
+    .spark {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, var(--spark-color) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkAnim 0.8s ease-out forwards;
+      z-index: 9999;
+      filter: drop-shadow(0 0 6px var(--spark-color));
+    }
+
+    @keyframes sparkAnim {
+      0% {
+        transform: scale(0.6);
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.2) translate(var(--x), var(--y));
+        opacity: 0;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="Header">
+    <div class="nav-links">
+      <a id="cors" href="">Courses</a>
+      <a id="featrs" href="">Features</a>
+      <a id="qres" href="">Report & Queries</a>
+    </div>
+  <br>
+  <br>
+      <a href="index.html" class="Heading"><b>𝐎𝐧𝐞𝐕𝐨𝐢𝐜𝐞</b></a>
+    </div>
+    <br>
+    <br>
+    <div class="login-container"> <!-- Reusing class for consistency -->
+        <div class="login-form">
+            <h2>Join Us</h2>
+            <p>Create your account to get started</p>
+            <form id="signupForm" netlify>
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+            <p class="signup-link">Already have an account? <a href="login.html">Sign in</a></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('click', e => {
+      const sparkCount = 15; // number of sparks in a circle
+      const radius = 30; // radius of the circle
+
+      // Generate a random color (HSL gives smooth hue variations)
+      const randomHue = Math.floor(Math.random() * 360);
+      const color = `hsl(${randomHue}, 100%, 60%)`;
+
+      for (let i = 0; i < sparkCount; i++) {
+        const angle = (i / sparkCount) * 2 * Math.PI;
+        const x = Math.cos(angle) * radius + 'px';
+        const y = Math.sin(angle) * radius + 'px';
+
+        const spark = document.createElement('div');
+        spark.classList.add('spark');
+        spark.style.left = `${e.clientX}px`;
+        spark.style.top = `${e.clientY}px`;
+        spark.style.setProperty('--x', x);
+        spark.style.setProperty('--y', y);
+        spark.style.setProperty('--spark-color', color);
+
+        document.body.appendChild(spark);
+        spark.addEventListener('animationend', () => spark.remove());
+      }
+    });
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Basic validation
+        if (!name || !email || !password || !confirmPassword) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+
+        // Here, you would typically send the data to your server
+        alert('Account created successfully! (This is a demo - integrate with your backend)');
+
+        // Optionally, redirect to login page
+        window.location.href = 'index.html';
+    });
+    </script>
+</body>
+</html>
